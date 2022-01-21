@@ -7,17 +7,11 @@
 }
 
 body{
-  background-image: url("/assets/img/se.png");
-  background-repeat: no-repeat;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
-  flex-direction: column;
-  background-attachment: fixed;
-  background-position: center;
-  /* background-color: rgba(0,0,0,0.5); */
-  padding: 2rem 0;
 }
 
 .greeting{
@@ -29,43 +23,21 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-bottom: 2rem; */
   font-size: 3rem;
 }
 
-.info>h1{
-  color: rgb(13,48,130);
+h1{
   font-weight: normal;
 }
 
-a{
-  font-weight: bold;
-}
 
-@media (max-width: 576px) {
-  body{
-    justify-content: start;
-    background: url("/assets/img/cicd.png");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    padding: 1rem;
-  }
-  .greeting{
-    font-size: 3rem;
-  }
+@media(max-width:512px){
   .info{
-    font-size: 1rem;
-  }
-}
-@media (max-width: 768px) {
-   .info{
     font-size: 2rem;
   }
 }
-
-@media(mex-width: 1024px){
+@media(max-width:280px){
   .info{
-    font-size: 3rem;
+    font-size: 1.7rem;
   }
 }
-
