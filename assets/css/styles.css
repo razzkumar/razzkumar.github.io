@@ -11,7 +11,7 @@ body{
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 95vh;
 }
 
 .greeting{
@@ -36,7 +36,7 @@ h1{
     font-size: 2rem;
   }
 }
-@media(max-width:280px){
+@media(max-width:315px){
   .info{
     font-size: 1.7rem;
   }
