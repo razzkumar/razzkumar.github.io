@@ -2,7 +2,7 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   schedule:
     # 06:00 UTC daily — refreshes GithubStats build-time fetch (R2 mitigation).
     - cron: '0 6 * * *'
