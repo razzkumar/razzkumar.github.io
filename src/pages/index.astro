@@ -1,16 +1,29 @@
 ---
-import '../styles/index.css'
+import Base from '@/layouts/Base.astro'
+import { Hero } from '@/components/Hero.tsx'
+import { Stats } from '@/components/Stats.tsx'
+import { Skills } from '@/components/Skills.tsx'
+import { Experience } from '@/components/Experience.tsx'
+import { Lifecycle } from '@/components/Lifecycle.tsx'
+import { Projects } from '@/components/Projects.tsx'
+import { GithubStats } from '@/components/GithubStats.tsx'
+import { Contact } from '@/components/Contact.tsx'
+import { getGithubStats } from '@/lib/github-stats'
+
+const stats = await getGithubStats()
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Astro shell</title>
-  </head>
-  <body>
-    <main class="font-mono rounded-full bg-[#0E0B09] text-[#F2EBDD]">
-      <h1>Astro shell — pages will be filled in by P2-T6.</h1>
-    </main>
-  </body>
-</html>
+<Base
+  title="razzkumar — Lead SWE / DevOps / SRE"
+  description="Lead Software Engineer building resilient multi-region Kubernetes platforms. 100+ production apps. DevOps, SRE, AI infrastructure, full-stack."
+>
+  <section id="about">
+    <Hero client:load />
+  </section>
+  <Stats client:visible />
+  <Skills client:visible />
+  <Experience client:visible />
+  <Lifecycle client:visible />
+  <Projects client:visible />
+  <GithubStats client:visible stats={stats} />
+  <Contact client:visible />
+</Base>
