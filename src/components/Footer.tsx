@@ -8,7 +8,10 @@ export function Footer() {
         className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3 text-[12px] font-mono"
         style={{ color: "#8A8073" }}
       >
-        <span>© 2026 razzkumar · crafted by hand in Kathmandu.</span>
+        <span>
+          © 2026 razzkumar · Made in Kathmandu · by a{" "}
+          <span style={{ color: "#F2EBDD" }}>human</span>, with thoughtful AI in the loop.
+        </span>
         <span style={{ color: "#D94B1F" }}>~/end-of-file</span>
       </div>
     </footer>
