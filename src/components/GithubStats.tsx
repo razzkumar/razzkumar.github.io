@@ -1,39 +1,10 @@
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
 import { Github, Star, GitFork, Users } from "lucide-react";
-
-type User = { public_repos: number; followers: number; following: number; avatar_url: string; name: string; bio: string };
-type Repo = { id: number; name: string; description: string; stargazers_count: number; forks_count: number; language: string; html_url: string };
+import type { GithubStats } from "@/lib/github-stats";
 
 const USERNAME = "razzkumar";
 
-export function GithubStats() {
-  const [user, setUser] = useState<User | null>(null);
-  const [repos, setRepos] = useState<Repo[]>([]);
-  const [err, setErr] = useState(false);
-
-  useEffect(() => {
-    let cancelled = false;
-    Promise.all([
-      fetch(`https://api.github.com/users/${USERNAME}`).then((r) => (r.ok ? r.json() : Promise.reject())),
-      fetch(`https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=100`).then((r) =>
-        r.ok ? r.json() : Promise.reject()
-      ),
-    ])
-      .then(([u, rs]: [User, Repo[]]) => {
-        if (cancelled) return;
-        setUser(u);
-        const top = [...rs].sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 4);
-        setRepos(top);
-      })
-      .catch(() => !cancelled && setErr(true));
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const totalStars = repos.reduce((a, r) => a + r.stargazers_count, 0);
-
+export function GithubStats({ stats }: { stats: GithubStats }) {
   return (
     <section
       id="github"
@@ -79,7 +50,7 @@ export function GithubStats() {
           </a>
         </motion.div>
 
-        {err ? (
+        {stats.topRepos.length === 0 ? (
           <div
             className="rounded-2xl border p-6 font-mono text-[13px]"
             style={{ borderColor: "#3A332E", background: "#161210", color: "#8A8073" }}
@@ -95,9 +66,9 @@ export function GithubStats() {
             {/* summary tiles */}
             <div className="grid grid-cols-3 gap-3 md:gap-4">
               {[
-                { v: user?.public_repos ?? "—", l: "public repos", icon: Github },
-                { v: user?.followers ?? "—", l: "followers", icon: Users },
-                { v: totalStars || "—", l: "stars (top 4)", icon: Star },
+                { v: stats.publicRepos, l: "public repos", icon: Github },
+                { v: stats.followers, l: "followers", icon: Users },
+                { v: stats.totalStars, l: "stars (top 4)", icon: Star },
               ].map((s, i) => (
                 <motion.div
                   key={i}
@@ -131,10 +102,10 @@ export function GithubStats() {
 
             {/* top repos */}
             <div className="grid md:grid-cols-2 gap-3 md:gap-4 mt-4">
-              {(repos.length ? repos : Array.from({ length: 4 }).map((_, i) => null)).map((r, i) => (
+              {stats.topRepos.map((r, i) => (
                 <motion.a
-                  key={r?.id ?? i}
-                  href={r?.html_url ?? `https://github.com/${USERNAME}`}
+                  key={r.id}
+                  href={r.html_url}
                   target="_blank"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -147,23 +118,23 @@ export function GithubStats() {
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-[14px]" style={{ color: "#F2EBDD" }}>
-                      {r?.name ?? "loading…"}
+                      {r.name}
                     </span>
-                    {r?.language && (
+                    {r.language && (
                       <span className="font-mono text-[10px]" style={{ color: "#D9A441" }}>
                         {r.language}
                       </span>
                     )}
                   </div>
                   <p className="mt-2 text-[13px] min-h-[36px]" style={{ color: "#C8BFAE" }}>
-                    {r?.description ?? "—"}
+                    {r.description ?? "—"}
                   </p>
                   <div className="mt-3 flex items-center gap-4 font-mono text-[11px]" style={{ color: "#8A8073" }}>
                     <span className="inline-flex items-center gap-1">
-                      <Star size={11} /> {r?.stargazers_count ?? 0}
+                      <Star size={11} /> {r.stargazers_count}
                     </span>
                     <span className="inline-flex items-center gap-1">
-                      <GitFork size={11} /> {r?.forks_count ?? 0}
+                      <GitFork size={11} /> {r.forks_count}
                     </span>
                   </div>
                 </motion.a>
