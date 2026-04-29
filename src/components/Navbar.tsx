@@ -2,12 +2,14 @@ import { motion, useMotionValueEvent, useScroll, AnimatePresence } from "motion/
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const items = [
+type Item = { label: string; id: string; route?: boolean };
+const items: Item[] = [
   { label: "About", id: "about" },
   { label: "Skills", id: "skills" },
   { label: "Experience", id: "experience" },
   { label: "Projects", id: "projects" },
   { label: "Contact", id: "contact" },
+  { label: "Blog", id: "/blog/", route: true },
 ];
 
 export function Navbar() {
@@ -30,6 +32,7 @@ export function Navbar() {
       { rootMargin: "-40% 0px -55% 0px" }
     );
     items.forEach((i) => {
+      if (i.route) return;
       const el = document.getElementById(i.id);
       if (el) obs.observe(el);
     });
@@ -71,21 +74,36 @@ export function Navbar() {
           style={{ borderColor: "#3A332E" }}
           onMouseLeave={() => setHovered(null)}
         >
-          <motion.span
-            whileHover={{ rotate: -8, scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", damping: 14, stiffness: 240 }}
-            className="px-3 md:px-4 tracking-tight font-mono text-[13px] cursor-pointer font-semibold"
-            style={{ color: "#F26430" }}
-            onClick={() => scrollTo("about")}
-          >
-            ~/razz
-          </motion.span>
+          <a href="/" aria-label="razzkumar — home" className="block">
+            <motion.span
+              whileHover={{ rotate: -8, scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", damping: 14, stiffness: 240 }}
+              className="px-3 md:px-4 tracking-tight font-mono text-[13px] cursor-pointer font-semibold inline-block"
+              style={{ color: "#F26430" }}
+            >
+              ~/razz
+            </motion.span>
+          </a>
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-1">
             <div className="w-px h-5" style={{ background: "#3A332E" }} />
             {items.map((it) => {
+              if (it.route) {
+                return (
+                  <a
+                    key={it.id}
+                    href={it.id}
+                    onMouseEnter={() => setHovered(it.id)}
+                    data-hover
+                    className="relative px-4 py-1.5 rounded-full text-[13px] transition-colors inline-block"
+                    style={{ color: "#C8BFAE" }}
+                  >
+                    {it.label}
+                  </a>
+                );
+              }
               const isActive = active === it.id;
               const isClicked = clicked === it.id;
               return (
@@ -171,27 +189,52 @@ export function Navbar() {
               transition={{ type: "spring", damping: 22, stiffness: 200 }}
               className="pt-24 px-6 flex flex-col gap-1"
             >
-              {items.map((it, i) => (
-                <motion.button
-                  key={it.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 + i * 0.05, type: "spring", damping: 22 }}
-                  onClick={() => scrollTo(it.id)}
-                  className="text-left py-4 border-b flex items-center justify-between"
-                  style={{
-                    borderColor: "#3A332E",
-                    color: active === it.id ? "#D94B1F" : "#F2EBDD",
-                  }}
-                >
-                  <span style={{ fontSize: "28px", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                    {it.label}
-                  </span>
-                  <span className="font-mono text-[11px]" style={{ color: "#8A8073" }}>
-                    0{i + 1}
-                  </span>
-                </motion.button>
-              ))}
+              {items.map((it, i) => {
+                const initial = { opacity: 0, x: -20 } as const;
+                const animate = { opacity: 1, x: 0 } as const;
+                const transition = { delay: 0.05 + i * 0.05, type: "spring" as const, damping: 22 };
+                const className = "text-left py-4 border-b flex items-center justify-between";
+                const style = {
+                  borderColor: "#3A332E",
+                  color: !it.route && active === it.id ? "#D94B1F" : "#F2EBDD",
+                };
+                const inner = (
+                  <>
+                    <span style={{ fontSize: "28px", fontWeight: 600, letterSpacing: "-0.02em" }}>
+                      {it.label}
+                    </span>
+                    <span className="font-mono text-[11px]" style={{ color: "#8A8073" }}>
+                      0{i + 1}
+                    </span>
+                  </>
+                );
+                return it.route ? (
+                  <motion.a
+                    key={it.id}
+                    href={it.id}
+                    initial={initial}
+                    animate={animate}
+                    transition={transition}
+                    className={className}
+                    style={style}
+                    onClick={() => setOpen(false)}
+                  >
+                    {inner}
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    key={it.id}
+                    initial={initial}
+                    animate={animate}
+                    transition={transition}
+                    className={className}
+                    style={style}
+                    onClick={() => scrollTo(it.id)}
+                  >
+                    {inner}
+                  </motion.button>
+                );
+              })}
             </motion.div>
           </motion.div>
         )}
