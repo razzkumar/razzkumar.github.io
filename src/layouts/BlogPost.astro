@@ -3,17 +3,31 @@ import Base from '@/layouts/Base.astro'
 import { TagPill } from '@/components/blog/TagPill.tsx'
 import { Giscus } from '@/components/blog/Giscus.tsx'
 import type { CollectionEntry } from 'astro:content'
+import { blogPostingSchema, breadcrumbSchema } from '@/lib/seo/schema'
+import { SITE } from '@/lib/seo/person'
 
 interface Props { post: CollectionEntry<'blog'>; readingTime: string }
 const { post, readingTime } = Astro.props
 const ogImage = `/og/${post.slug}.png`
+const jsonLd = [
+  blogPostingSchema(post),
+  breadcrumbSchema([
+    { name: 'Home', url: `${SITE.url}/` },
+    { name: 'Blog', url: `${SITE.url}/blog/` },
+    { name: post.data.title, url: `${SITE.url}/blog/${post.slug}/` },
+  ]),
+]
 ---
 <Base
   title={post.data.title}
   description={post.data.description}
   ogImage={ogImage}
+  ogImageAlt={post.data.title}
+  ogType="article"
+  jsonLd={jsonLd}
 >
   <article class="mx-auto max-w-2xl px-4 py-16" style="color: #F2EBDD;">
+    <a href="/blog/" class="inline-block mb-6 font-mono text-[12px]" style="color: #D94B1F;">← back to /blog</a>
     <header class="mb-10">
       <h1 class="text-4xl md:text-5xl font-semibold tracking-tight">{post.data.title}</h1>
       <p class="mt-3 font-mono text-[12px]" style="color: #8A8073;">

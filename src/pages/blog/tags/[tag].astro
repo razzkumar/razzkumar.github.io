@@ -2,6 +2,8 @@
 import Base from '@/layouts/Base.astro'
 import { PostCard } from '@/components/blog/PostCard.tsx'
 import { getCollection, type CollectionEntry } from 'astro:content'
+import { breadcrumbSchema } from '@/lib/seo/schema'
+import { SITE } from '@/lib/seo/person'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft)
@@ -21,10 +23,18 @@ interface Props {
 }
 
 const { posts, tag } = Astro.props
+const jsonLd = [
+  breadcrumbSchema([
+    { name: 'Home', url: `${SITE.url}/` },
+    { name: 'Blog', url: `${SITE.url}/blog/` },
+    { name: `#${tag}`, url: `${SITE.url}/blog/tags/${tag}/` },
+  ]),
+]
 ---
 <Base
   title={`#${tag} — razzkumar`}
   description={`Posts tagged #${tag}`}
+  jsonLd={jsonLd}
 >
   <section class="mx-auto max-w-2xl px-4 py-20" style="color: #F2EBDD;">
     <p class="font-mono text-[12px] uppercase tracking-[0.3em] mb-3" style="color: #D94B1F;">tagged</p>
