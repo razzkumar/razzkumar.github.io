@@ -1,0 +1,662 @@
+[
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "bootup-time",
+    "level": "warn",
+    "url": "http://localhost:53936/",
+    "auditTitle": "JavaScript execution time",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/bootup-time/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "content-width",
+    "level": "error",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Content is not sized correctly for the viewport",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/content-width/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "csp-xss",
+    "level": "error",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Ensure CSP is effective against XSS attacks",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.5,
+    "values": [
+      0.5
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "dom-size",
+    "level": "warn",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Avoid an excessive DOM size",
+    "auditDocumentationLink": "https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "errors-in-console",
+    "level": "error",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Browser errors were logged to the console",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.8,
+    "values": [
+      0.8
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "first-contentful-paint",
+    "level": "warn",
+    "url": "http://localhost:53936/",
+    "auditTitle": "First Contentful Paint",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "installable-manifest",
+    "level": "error",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Web app manifest or service worker do not meet the installability requirements",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.83,
+    "values": [
+      0.83
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "largest-contentful-paint",
+    "level": "warn",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Largest Contentful Paint",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "mainthread-work-breakdown",
+    "level": "warn",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Minimizes main-thread work",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "maskable-icon",
+    "level": "error",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Manifest doesn't have a maskable icon",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
+    "values": [
+      1
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "render-blocking-resources",
+    "level": "warn",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Eliminate render-blocking resources",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "server-response-time",
+    "level": "warn",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Initial server response time was short",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "splash-screen",
+    "level": "error",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Is not configured for a custom splash screen",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "themed-omnibox",
+    "level": "error",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Does not set a theme color for the address bar.",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "total-byte-weight",
+    "level": "error",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Avoids enormous network payloads",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
+    "values": [
+      1
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "unused-javascript",
+    "level": "error",
+    "url": "http://localhost:53936/",
+    "auditTitle": "Reduce unused JavaScript",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "bootup-time",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "JavaScript execution time",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/bootup-time/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "csp-xss",
+    "level": "error",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Ensure CSP is effective against XSS attacks",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "dom-size",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Avoids an excessive DOM size",
+    "auditDocumentationLink": "https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "errors-in-console",
+    "level": "error",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Browser errors were logged to the console",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "installable-manifest",
+    "level": "error",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Web app manifest or service worker do not meet the installability requirements",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "mainthread-work-breakdown",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Minimizes main-thread work",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "maskable-icon",
+    "level": "error",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Manifest doesn't have a maskable icon",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
+    "values": [
+      1
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "render-blocking-resources",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Eliminate render-blocking resources",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "server-response-time",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Initial server response time was short",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "splash-screen",
+    "level": "error",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Is not configured for a custom splash screen",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "themed-omnibox",
+    "level": "error",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Does not set a theme color for the address bar.",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "total-byte-weight",
+    "level": "error",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Avoids enormous network payloads",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.5,
+    "values": [
+      0.5
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "unsized-images",
+    "level": "error",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Image elements do not have explicit `width` and `height`",
+    "auditDocumentationLink": "https://web.dev/articles/optimize-cls#images_without_dimensions"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
+    "values": [
+      1
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "unused-javascript",
+    "level": "error",
+    "url": "http://localhost:53936/blog/",
+    "auditTitle": "Reduce unused JavaScript",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "bootup-time",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "JavaScript execution time",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/bootup-time/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "csp-xss",
+    "level": "error",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Ensure CSP is effective against XSS attacks",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "dom-size",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Avoids an excessive DOM size",
+    "auditDocumentationLink": "https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "errors-in-console",
+    "level": "error",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Browser errors were logged to the console",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.89,
+    "values": [
+      0.89
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "first-contentful-paint",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "First Contentful Paint",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "installable-manifest",
+    "level": "error",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Web app manifest or service worker do not meet the installability requirements",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "mainthread-work-breakdown",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Minimizes main-thread work",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "maskable-icon",
+    "level": "error",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Manifest doesn't have a maskable icon",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
+    "values": [
+      1
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "render-blocking-resources",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Eliminate render-blocking resources",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "server-response-time",
+    "level": "warn",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Initial server response time was short",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "splash-screen",
+    "level": "error",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Is not configured for a custom splash screen",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "themed-omnibox",
+    "level": "error",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Does not set a theme color for the address bar.",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "total-byte-weight",
+    "level": "error",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Avoids enormous network payloads",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
+    "values": [
+      1
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "unused-javascript",
+    "level": "error",
+    "url": "http://localhost:53936/blog/hello-blog/",
+    "auditTitle": "Reduce unused JavaScript",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/"
+  }
+]

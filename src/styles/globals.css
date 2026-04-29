@@ -1,0 +1,9 @@
+/* Shiki code-comment contrast bump for WCAG AA. The github-dark theme
+   ships comment color #616971 on #22262a (~2.73:1). We override comment
+   tokens to a higher-contrast neutral that still reads as "muted code". */
+pre.astro-code span[style*="#6A737D"],
+pre.astro-code span[style*="#6a737d"],
+pre.astro-code span[style*="#616971"],
+pre.astro-code span[style*="#6e7681"] {
+  color: #9ba2ad !important; /* ~6.0:1 on #22262a */
+}

@@ -79,21 +79,21 @@ export function Hero() {
         }}
       />
 
-      {/* warm ambient lights */}
+      {/* warm ambient lights — mobile blur radii reduced (R6 mitigation, pre-approved per Principle 1.b) */}
       <motion.div
         style={{ x: px, y: py }}
-        className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-[140px]"
+        className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-[60px] md:blur-[140px]"
       >
         <div className="w-full h-full rounded-full" style={{ background: "rgba(217,75,31,0.22)" }} />
       </motion.div>
       <motion.div
         style={{ x: useTransform(px, (v) => -v), y: useTransform(py, (v) => -v) }}
-        className="absolute top-1/3 -right-40 w-[600px] h-[600px] rounded-full blur-[160px]"
+        className="absolute top-1/3 -right-40 w-[600px] h-[600px] rounded-full blur-[70px] md:blur-[160px]"
       >
         <div className="w-full h-full rounded-full" style={{ background: "rgba(217,164,65,0.14)" }} />
       </motion.div>
       <div
-        className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full blur-[140px]"
+        className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full blur-[60px] md:blur-[140px]"
         style={{ background: "rgba(122,155,110,0.12)" }}
       />
 
@@ -152,8 +152,8 @@ export function Hero() {
               <a
                 href="https://github.com/razzkumar"
                 target="_blank"
-                className="px-6 py-3 rounded-full inline-flex items-center gap-2 transition-shadow hover:shadow-[0_10px_40px_-10px_rgba(217,75,31,0.6)]"
-                style={{ background: "#D94B1F", color: "#F2EBDD" }}
+                className="px-6 py-3 rounded-full inline-flex items-center gap-2 transition-shadow hover:shadow-[0_10px_40px_-10px_rgba(217,75,31,0.6)] font-medium"
+                style={{ background: "#D94B1F", color: "#0E0B09" }}
                 data-hover
               >
                 <Github size={16} /> GitHub

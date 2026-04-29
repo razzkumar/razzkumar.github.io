@@ -2,29 +2,32 @@
 
 :root {
   --font-size: 16px;
-  --background: #ffffff;
-  --foreground: oklch(0.145 0 0);
-  --card: #ffffff;
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: #030213;
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.95 0.0058 264.53);
-  --secondary-foreground: #030213;
-  --muted: #ececf0;
-  --muted-foreground: #717182;
-  --accent: #e9ebef;
-  --accent-foreground: #030213;
+  /* Site is dark-mode-only — :root defaults to the warm-ink palette so
+     pages without a wrapping .bg-* utility (e.g. blog post bodies) render
+     correctly without an explicit .dark class. */
+  --background: #0e0b09;
+  --foreground: #f2ebdd;
+  --card: #161210;
+  --card-foreground: #f2ebdd;
+  --popover: #161210;
+  --popover-foreground: #f2ebdd;
+  --primary: #d94b1f;
+  --primary-foreground: #f2ebdd;
+  --secondary: #241e1b;
+  --secondary-foreground: #f2ebdd;
+  --muted: #241e1b;
+  --muted-foreground: #c8bfae;
+  --accent: #241e1b;
+  --accent-foreground: #f2ebdd;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.1);
-  --input: transparent;
-  --input-background: #f3f3f5;
-  --switch-background: #cbced4;
+  --border: #3a332e;
+  --input: #241e1b;
+  --input-background: #161210;
+  --switch-background: #3a332e;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: oklch(0.708 0 0);
+  --ring: #d94b1f;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);

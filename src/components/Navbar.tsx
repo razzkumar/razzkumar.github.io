@@ -75,8 +75,8 @@ export function Navbar() {
             whileHover={{ rotate: -8, scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", damping: 14, stiffness: 240 }}
-            className="px-3 md:px-4 tracking-tight font-mono text-[13px] cursor-pointer"
-            style={{ color: "#D94B1F" }}
+            className="px-3 md:px-4 tracking-tight font-mono text-[13px] cursor-pointer font-semibold"
+            style={{ color: "#F26430" }}
             onClick={() => scrollTo("about")}
           >
             ~/razz
