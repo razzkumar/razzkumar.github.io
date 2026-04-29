@@ -11,6 +11,9 @@ dist-ssr
 # Vite
 .vite
 
+# Astro
+.astro
+
 # Logs
 logs
 *.log
