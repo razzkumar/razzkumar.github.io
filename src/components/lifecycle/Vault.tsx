@@ -31,7 +31,7 @@ export function VaultViz() {
     const cycle = async () => {
       // ROTATE
       setPhase("rotate");
-      setStatusText("▸ vault: rotating " + rotations[idx].key);
+      setStatusText("▸ vault: rotating " + rotations[idx]!.key);
       setStatusColor("#D9A441");
       await sleep(1100);
 
@@ -100,7 +100,7 @@ export function VaultViz() {
     };
   }, [idx]);
 
-  const sec = rotations[idx];
+  const sec = rotations[idx]!;
 
   return (
     <div

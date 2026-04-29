@@ -29,7 +29,7 @@ function Typing({ text, delay }: { text: string; delay: number }) {
 }
 
 // reveal each word with spring stagger
-function WordReveal({ text, delay = 0, className = "", style = {} as React.CSSProperties }) {
+function WordReveal({ text, delay = 0, className = "", style = {} as React.CSSProperties }: { text: string; delay?: number; className?: string; style?: React.CSSProperties }) {
   return (
     <span className={className} style={{ display: "inline-block", ...style }}>
       {text.split(" ").map((w, i) => (

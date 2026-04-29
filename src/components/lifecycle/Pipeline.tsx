@@ -263,7 +263,7 @@ export function Pipeline() {
                 lineHeight: 1.05,
               }}
             >
-              {stages[stage].title}
+              {stages[stage]!.title}
             </motion.h3>
           </AnimatePresence>
           <div className="mt-4 flex items-center gap-3">
@@ -293,7 +293,7 @@ export function Pipeline() {
             <span className="w-2 h-2 rounded-full" style={{ background: "#D9A441" }} />
             <span className="w-2 h-2 rounded-full" style={{ background: "#7A9B6E" }} />
             <span className="ml-2 text-[11px]" style={{ color: "#8A8073" }}>
-              tail -f /var/log/{stages[stage].label}.log
+              tail -f /var/log/{stages[stage]!.label}.log
             </span>
           </div>
           <AnimatePresence mode="wait">
@@ -305,7 +305,7 @@ export function Pipeline() {
               transition={{ duration: 0.3 }}
               className="space-y-1.5"
             >
-              {logsByStage[stage].map((l, i) => (
+              {logsByStage[stage]!.map((l, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -6 }}
