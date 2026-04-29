@@ -1,0 +1,18 @@
+---
+import Base from '@/layouts/Base.astro'
+---
+<Base title="404 — Page not found" description="The page you're looking for doesn't exist on razzkumar.github.io." ogType="website">
+  <section class="mx-auto max-w-2xl px-4 py-32 text-center" style="color: #F2EBDD;">
+    <p class="font-mono text-[12px] uppercase tracking-[0.3em] mb-4" style="color: #D94B1F;">error</p>
+    <h1 class="text-7xl md:text-8xl font-semibold tracking-tight mb-6" style="color: #F2EBDD;">404</h1>
+    <p class="text-xl mb-10" style="color: #C8BFAE;">page not found</p>
+    <p class="font-mono text-[13px] mb-10" style="color: #8A8073;">
+      The route you tried doesn't exist. It may have been moved or never been here.
+    </p>
+    <div class="flex justify-center gap-4 font-mono text-[13px]">
+      <a href="/" style="color: #D94B1F;" class="underline">~/home</a>
+      <span style="color: #3A332E;">·</span>
+      <a href="/blog/" style="color: #D94B1F;" class="underline">/blog</a>
+    </div>
+  </section>
+</Base>

@@ -75,6 +75,9 @@ importers:
       '@types/react-dom':
         specifier: ~18.3.0
         version: 18.3.7(@types/react@18.3.28)
+      sharp:
+        specifier: ^0.33.0
+        version: 0.33.5
       tailwindcss:
         specifier: ~4.1.12
         version: 4.1.18
@@ -3441,13 +3444,11 @@ snapshots:
     dependencies:
       color-name: 1.1.4
       simple-swizzle: 0.2.4
-    optional: true
 
   color@4.2.3:
     dependencies:
       color-convert: 2.0.1
       color-string: 1.9.1
-    optional: true
 
   comma-separated-tokens@2.0.3: {}
 
@@ -3748,8 +3749,7 @@ snapshots:
 
   iron-webcrypto@1.2.1: {}
 
-  is-arrayish@0.3.4:
-    optional: true
+  is-arrayish@0.3.4: {}
 
   is-docker@3.0.0: {}
 
@@ -4497,7 +4497,6 @@ snapshots:
       '@img/sharp-wasm32': 0.33.5
       '@img/sharp-win32-ia32': 0.33.5
       '@img/sharp-win32-x64': 0.33.5
-    optional: true
 
   shiki@3.23.0:
     dependencies:
@@ -4513,7 +4512,6 @@ snapshots:
   simple-swizzle@0.2.4:
     dependencies:
       is-arrayish: 0.3.4
-    optional: true
 
   sirv@3.0.2:
     dependencies:
