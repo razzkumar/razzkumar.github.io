@@ -1,0 +1,12 @@
+---
+// src/components/seo/JsonLd.astro
+// Tiny wrapper. Astro's `set:html` is the RAW-injection escape hatch — it does
+// NOT escape `</script>` sequences. We must hand-escape `<` to its JSON-safe
+// `<` form so a post title like "How to use `<Suspense>` in React" or any
+// description containing `</script>` cannot break out of the script tag.
+// Canonical OWASP-recommended pattern. See R8 in §4 Risks.
+interface Props { data: Record<string, unknown> }
+const { data } = Astro.props
+const json = JSON.stringify(data).replace(/</g, '\\u003c')
+---
+<script type="application/ld+json" set:html={json} is:inline></script>
