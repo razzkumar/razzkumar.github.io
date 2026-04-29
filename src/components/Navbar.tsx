@@ -87,7 +87,6 @@ export function Navbar() {
             <div className="w-px h-5" style={{ background: "#3A332E" }} />
             {items.map((it) => {
               const isActive = active === it.id;
-              const isHovered = hovered === it.id;
               const isClicked = clicked === it.id;
               return (
                 <button
@@ -98,27 +97,15 @@ export function Navbar() {
                   className="relative px-4 py-1.5 rounded-full text-[13px] transition-colors"
                   style={{ color: isActive ? "#F2EBDD" : "#C8BFAE" }}
                 >
-                  <AnimatePresence>
-                    {isHovered && (
-                      <motion.span
-                        layoutId="nav-hover"
-                        className="absolute inset-0 rounded-full -z-10"
-                        style={{ background: "rgba(242,235,221,0.08)" }}
-                        transition={{ type: "spring", damping: 26, stiffness: 320, mass: 0.6 }}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                      />
-                    )}
-                  </AnimatePresence>
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-active"
-                      className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full"
-                      style={{ background: "#D94B1F" }}
-                      transition={{ type: "spring", damping: 22, stiffness: 260 }}
-                    />
-                  )}
+                  <span
+                    aria-hidden
+                    className="absolute left-1/2 -translate-x-1/2 -bottom-0.5 w-1 h-1 rounded-full"
+                    style={{
+                      background: "#D94B1F",
+                      opacity: isActive ? 1 : 0,
+                      transition: "opacity 200ms ease",
+                    }}
+                  />
                   <AnimatePresence>
                     {isClicked && (
                       <motion.span
