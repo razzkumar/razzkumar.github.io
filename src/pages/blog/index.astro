@@ -1,0 +1,28 @@
+---
+import Base from '@/layouts/Base.astro'
+import { PostCard } from '@/components/blog/PostCard.tsx'
+import { Search } from '@/components/blog/Search.tsx'
+import { getCollection } from 'astro:content'
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+---
+<Base
+  title="Writing — razzkumar"
+  description="Notes on cloud, platform engineering, and tooling."
+>
+  <section class="mx-auto max-w-2xl px-4 py-20" style="color: #F2EBDD;">
+    <h1 class="text-5xl md:text-6xl font-semibold tracking-tight mb-6">Writing</h1>
+    <p class="font-mono text-[13px] mb-10" style="color: #8A8073;">
+      Notes on cloud, platform engineering, and tooling.
+    </p>
+    <Search client:idle />
+    {posts.length === 0 ? (
+      <p class="mt-10 font-mono text-[#8A8073]">No posts yet.</p>
+    ) : (
+      <ul class="mt-10 space-y-5 list-none p-0">
+        {posts.map((p) => <li><PostCard post={p} /></li>)}
+      </ul>
+    )}
+  </section>
+</Base>

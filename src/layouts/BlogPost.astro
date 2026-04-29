@@ -1,0 +1,33 @@
+---
+import Base from '@/layouts/Base.astro'
+import { TagPill } from '@/components/blog/TagPill.tsx'
+import { Giscus } from '@/components/blog/Giscus.tsx'
+import type { CollectionEntry } from 'astro:content'
+
+interface Props { post: CollectionEntry<'blog'>; readingTime: string }
+const { post, readingTime } = Astro.props
+const ogImage = `/og/${post.slug}.png`
+---
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  ogImage={ogImage}
+>
+  <article class="mx-auto max-w-2xl px-4 py-16" style="color: #F2EBDD;">
+    <header class="mb-10">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight">{post.data.title}</h1>
+      <p class="mt-3 font-mono text-[12px]" style="color: #8A8073;">
+        {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        {' · '}
+        {readingTime}
+      </p>
+      <ul class="mt-4 flex flex-wrap gap-2 list-none p-0">
+        {post.data.tags.map((t) => <li><TagPill tag={t} /></li>)}
+      </ul>
+    </header>
+    <div class="space-y-5 leading-relaxed [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_h3]:mt-8 [&_h3]:text-xl [&_p]:my-5 [&_a]:text-[#D94B1F] [&_a]:underline [&_code]:bg-[#161210] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:font-mono [&_code]:text-[13px] [&_pre]:bg-[#161210] [&_pre]:rounded-2xl [&_pre]:p-5 [&_pre]:overflow-x-auto [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_blockquote]:border-l-2 [&_blockquote]:border-[#3A332E] [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-[#C8BFAE]" style="color: #F2EBDD; opacity: 0.9;">
+      <slot />
+    </div>
+    <Giscus client:visible />
+  </article>
+</Base>
