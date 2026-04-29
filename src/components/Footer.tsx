@@ -1,4 +1,5 @@
 export function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer
       className="border-t py-10 px-6"
@@ -9,7 +10,7 @@ export function Footer() {
         style={{ color: "#8A8073" }}
       >
         <span>
-          © 2026 razzkumar · Made in Kathmandu · by a{" "}
+          © {year} razzkumar · by a{" "}
           <span style={{ color: "#F2EBDD" }}>human</span>, with thoughtful AI in the loop.
         </span>
         <span style={{ color: "#D94B1F" }}>~/end-of-file</span>
