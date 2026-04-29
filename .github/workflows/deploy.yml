@@ -48,6 +48,11 @@ jobs:
           PUBLIC_GISCUS_REPO_ID: ${{ vars.GISCUS_REPO_ID }}
           PUBLIC_GISCUS_CATEGORY: ${{ vars.GISCUS_CATEGORY }}
           PUBLIC_GISCUS_CATEGORY_ID: ${{ vars.GISCUS_CATEGORY_ID }}
+          # Google Search Console verification — token is a public site-ownership
+          # proof, not a secret. Set as a repo Variable (not Secret) so it's
+          # inlined into the static bundle. Empty values cause the meta tag to
+          # be omitted entirely (Base.astro guard).
+          PUBLIC_GSC_VERIFICATION: ${{ vars.GSC_VERIFICATION }}
         run: pnpm exec astro build
 
       - name: Configure Pages

@@ -84,3 +84,35 @@ Repo settings to configure once:
 - Settings → Pages → Source: **GitHub Actions**
 - Settings → Secrets → `GH_STATS_TOKEN` (fine-grained PAT, public_repo:read) — optional but recommended (5000/hr vs 60/hr unauth).
 - Settings → Variables → `GISCUS_REPO`, `GISCUS_REPO_ID`, `GISCUS_CATEGORY`, `GISCUS_CATEGORY_ID` — optional; comments stay disabled (silent fallback) until set.
+
+## Search engine submission
+
+The site emits robots.txt, sitemap-index.xml, RSS, structured data (Person + WebSite + BlogPosting + BreadcrumbList JSON-LD), Open Graph + Twitter cards, and a placeholder slot for a Google Search Console verification meta tag. Submission is a one-time manual step.
+
+### Google Search Console (GSC)
+
+1. Go to [search.google.com/search-console](https://search.google.com/search-console) → **Add property** → **URL prefix** → `https://razzkumar.github.io/`.
+2. Choose **HTML tag** as the verification method. Copy the `content="…"` value (a 40-char token).
+3. In the GitHub repo: **Settings → Secrets and variables → Actions → Variables → New repository variable**:
+   - **Name:** `GSC_VERIFICATION`
+   - **Value:** the token only (no `<meta>` wrapper).
+4. Push any commit (or run the workflow manually). GitHub Actions deploy will inline `<meta name="google-site-verification" content="…">` into every page's `<head>` via `PUBLIC_GSC_VERIFICATION`.
+5. Back in GSC, click **Verify**. Once verified:
+   - **Sitemaps → Add a new sitemap** → `sitemap-index.xml` → Submit.
+   - **Settings → Email preferences** → enable Coverage / Manual action alerts.
+
+The GSC token is a **public site-ownership proof**, not a secret — it's correctly stored as a repo Variable (which gets inlined into the static bundle), not as a Secret.
+
+### Bing Webmaster Tools
+
+1. Go to [bing.com/webmasters](https://www.bing.com/webmasters) → **Add site**.
+2. Choose **Import from Google Search Console** for one-click verification (works once GSC is verified).
+3. **Sitemaps → Submit a sitemap** → `https://razzkumar.github.io/sitemap-index.xml` (Bing imports it automatically from GSC, but a manual submit is a safe backup).
+
+### Validating structured data
+
+After deploy:
+
+- [search.google.com/test/rich-results](https://search.google.com/test/rich-results) → enter `https://razzkumar.github.io/` → expect Person + WebSite detected.
+- Same for `https://razzkumar.github.io/blog/hello-blog/` → expect BlogPosting + BreadcrumbList.
+- Social card preview: [opengraph.xyz](https://opengraph.xyz) or LinkedIn's Post Inspector.
