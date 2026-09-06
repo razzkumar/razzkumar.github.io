@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime.ClP7wGfN.js";import{r as o}from"./index.DK-fsZOb.js";function c(){return o.useRef(null),o.useEffect(()=>{},[""]),r.jsx("div",{className:"mt-12",style:{color:"#8A8073",fontSize:"13px",fontFamily:"monospace"}})}export{c as Giscus};
