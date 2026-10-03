@@ -1,0 +1,71 @@
+/* Giscus custom theme. */
+
+main {
+  --color-prettylights-syntax-comment: #8a8073;
+  --color-prettylights-syntax-constant: #d9a441;
+  --color-prettylights-syntax-entity: #d94b1f;
+  --color-prettylights-syntax-storage-modifier-import: #f2ebdd;
+  --color-prettylights-syntax-entity-tag: #7a9b6e;
+  --color-prettylights-syntax-keyword: #d94b1f;
+  --color-prettylights-syntax-string: #d9a441;
+  --color-prettylights-syntax-variable: #f2ebdd;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #f87171;
+  --color-prettylights-syntax-invalid-illegal-text: #fef2f2;
+  --color-prettylights-syntax-invalid-illegal-bg: #b91c1c;
+  --color-prettylights-syntax-carriage-return-text: #fef2f2;
+  --color-prettylights-syntax-carriage-return-bg: #b91c1c;
+  --color-prettylights-syntax-string-regexp: #7a9b6e;
+  --color-prettylights-syntax-markup-list: #d9a441;
+  --color-prettylights-syntax-markup-heading: #d94b1f;
+  --color-prettylights-syntax-markup-italic: #c8bfae;
+  --color-prettylights-syntax-markup-bold: #f2ebdd;
+  --color-prettylights-syntax-markup-deleted-text: #fef2f2;
+  --color-prettylights-syntax-markup-deleted-bg: #4a1c1c;
+  --color-prettylights-syntax-markup-inserted-text: #f2ebdd;
+  --color-prettylights-syntax-markup-inserted-bg: #1c4a2c;
+
+  --color-btn-text: #f2ebdd;
+  --color-btn-bg: #161210;
+  --color-btn-border: #3a332e;
+  --color-btn-hover-bg: #241e1b;
+  --color-btn-hover-border: #d94b1f;
+  --color-btn-active-bg: #0e0b09;
+  --color-btn-active-border: #d94b1f;
+  --color-btn-selected-bg: #0e0b09;
+  --color-btn-primary-text: #f2ebdd;
+  --color-btn-primary-bg: #d94b1f;
+  --color-btn-primary-border: #d94b1f;
+  --color-btn-primary-hover-bg: #b83e19;
+  --color-btn-primary-hover-border: #b83e19;
+  --color-btn-primary-disabled-text: #8a8073;
+  --color-btn-primary-disabled-bg: #3a332e;
+  --color-btn-primary-disabled-border: #3a332e;
+
+  --color-fg-default: #f2ebdd;
+  --color-fg-muted: #c8bfae;
+  --color-fg-subtle: #8a8073;
+  --color-canvas-default: #0e0b09;
+  --color-canvas-overlay: #161210;
+  --color-canvas-inset: #161210;
+  --color-canvas-subtle: #161210;
+  --color-border-default: #3a332e;
+  --color-border-muted: #3a332e;
+  --color-neutral-muted: #241e1b;
+  --color-accent-fg: #d94b1f;
+  --color-accent-emphasis: #d94b1f;
+  --color-accent-muted: rgba(217, 75, 31, 0.4);
+  --color-accent-subtle: rgba(217, 75, 31, 0.15);
+  --color-success-fg: #7a9b6e;
+  --color-attention-fg: #d9a441;
+  --color-danger-fg: #f87171;
+  --color-primer-shadow-inset: 0 0 #0000;
+  --color-scale-gray-7: #161210;
+  --color-scale-blue-8: #1c2a4a;
+}
+
+main .pagination-loader-container {
+  background-image: none;
+}
+main .gsc-loading-image {
+  background-image: none;
+}
