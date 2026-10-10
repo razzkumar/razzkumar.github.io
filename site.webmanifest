@@ -1,0 +1,14 @@
+{
+  "name": "razzkumar — Raj Kumar Rai Danuwar",
+  "short_name": "razzkumar",
+  "description": "Lead Software Engineer building resilient multi-region Kubernetes platforms — DevOps, SRE, AI infrastructure, full-stack.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#0E0B09",
+  "theme_color": "#0E0B09",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180", "purpose": "any" }
+  ]
+}
